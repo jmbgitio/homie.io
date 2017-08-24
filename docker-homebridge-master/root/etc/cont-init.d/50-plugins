@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv sh
+
+# remove any plugins not in the package.json file
+echo "Homebridge: Removing old plugins..."
+npm prune
+
+# install plugins defined in the package.json file
+echo "Homebridge: Installing plugins..."
+yarn install
+
+# fix permissions
+chown -R abc:abc /homebridge
